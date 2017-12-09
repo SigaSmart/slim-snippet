@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+ \$this->getHeader('${1:coluna-name}')->getCell()->addDecorator('callable', [
+            'callable' => function(\$context, \$record){
+                return ${2:"//function|array|string"};
+            }
+        ]);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>call-decorator-callable</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

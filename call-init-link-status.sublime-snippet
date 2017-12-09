@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+\$this->getHeader('${1:name}')->getCell()->addDecorator('link', [
+            'url' => \$this->View->route->pathFor('${2:route}.edit', [
+                '${3:id}' => "%s"
+            ]),
+            'vars' => ['${3}']
+        ])->addCondition('equal', ['column' => '${4:status}', 'values' => '${5:1}']);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>call-init-link-status</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
