@@ -33,7 +33,7 @@ class ${2}Controller extends ControllerAbstract {
         \$this->getModel()->getTableModel();
         if (\$this->TableModel):
             //Se for usar o filtro por empresa descomentar essa linha
-            ${5://}\$this->model->offsetSet('empresa', \$this->user['empresa']);
+            ${5://}\$this->model->offsetSet('empresa', \$this->session->get('restrito', 'default'));
             \$this->getTable();
             if (\$this->table):
                \$this->Data = \$this->table->setTableModel(\$this->TableModel)->setModel(\$this->model)->getSelect(\$params);
