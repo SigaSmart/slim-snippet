@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[  
+<!-- Content Header (Page header) -->
+    <?= \$this->partials("top-navigation",[
+        'a'=>"Admin",'b'=>"${1:Admin}",'c'=>"Listar", "d"=>'${2:route}']); ?>
+      <!-- Main content -->
+      <section class="content">
+      	<div id="tableContainer"></div>
+<script>
+    \$(function () {
+        \$("#tableContainer").zfTable('<?= \$this->route->pathFor('api.${2}') ?>');
+    })
+</script>
+</section>]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>call-index-phtml</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

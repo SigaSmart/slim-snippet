@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+'${1:name}' => ['title' => '${2:Nome\Descrição}', 'filters' => 'text'${3:, 'width' => ${4:100}}],
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>call-models-header-title</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

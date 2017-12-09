@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[   \$this->group('/${1:route}', function () {
+		\$this->get("[/]", sprintf("%s:index", Controllers\\${2:Action}Controller::class))->setName('${1}');
+		\$this->get("/{id}/edit", sprintf("%s:edit", Controllers\\${2}Controller::class))->setName('${1}.edit');
+		\$this->post("/create", sprintf("%s:create", Controllers\\${2}Controller::class))->setName('${1}.create');
+		\$this->post("/store", sprintf("%s:store", Controllers\\${2}Controller::class))->setName('${1}.store');
+	});]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>call-sub-route</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

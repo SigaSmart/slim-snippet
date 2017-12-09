@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[\$this->map(['POST', 'GET'], "/${1:api}", sprintf("%s:listar", Api\Controllers\\${2:Action}Controller::class))->setName('api.${1}');
+			\$this->group('/${1}', function () {
+				\$this->post("/{id}/state", sprintf("%s:state", Api\Controllers\\${2}Controller::class))->setName('${1}.state');
+				\$this->post("/delete", sprintf("%s:delete", Api\Controllers\\${2}Controller::class))->setName('${1}.delete');
+			});]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>call-api-sub-route</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

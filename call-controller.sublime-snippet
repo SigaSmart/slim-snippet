@@ -1,0 +1,37 @@
+<snippet>
+	<content><![CDATA[<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+namespace SIGA\\${1:NameSpace}\V1\Controllers;
+
+use SIGA\Core\ControllerAbstract;
+use SIGA\\${1}\V1\Tables\\${2:Name}Table;
+use SIGA\\${1}\V1\Models\\${2};
+use SIGA\\${1}\V1\Form\\${2} as ${2}Form;
+
+/**
+ * Description of ${2}Controller
+ *
+ * @author caltj
+ */
+class ${2}Controller extends ControllerAbstract {
+
+    protected \$table = ${2}Table::class;
+    protected \$model = ${2}::class;
+    protected \$form =  ${2}Form::class;
+    protected \$TemplatePath = "${1}/views";
+    protected \$template = '${3:template}';
+    protected \$route = '${4:route}';
+
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>call-controller</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

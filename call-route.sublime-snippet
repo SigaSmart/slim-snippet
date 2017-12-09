@@ -1,0 +1,52 @@
+<snippet>
+	<content><![CDATA[<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+namespace SIGA\\${1:Namespace}\V1;
+
+use SIGA\\${4}\V1\Controllers;
+use SIGA\Core\RouteAbstract;
+
+/**
+ * Description of Route
+ *
+ * @author caltj
+ */
+class Route extends RouteAbstract {
+
+	//put your code here
+	public function create() {
+
+		//rotas ${2:admin} protegidas
+		\$this->app->group('/${2}', function () {
+
+			\$this->group('/${3:controller}', function () {
+				\$this->get("[/]", sprintf("%s:index", Controllers\\${4:Action}Controller::class))->setName('${3}');
+				\$this->get("/test", sprintf("%s:test", Controllers\\${4}Controller::class))->setName('test');
+				\$this->get("/{id}/edit", sprintf("%s:edit", Controllers\\${4}Controller::class))->setName('${3}.edit');
+				\$this->post("/create", sprintf("%s:create", Controllers\\${4}Controller::class))->setName('${3}.create');
+				\$this->post("/store", sprintf("%s:store", Controllers\\${4}Controller::class))->setName('${3}.store');
+			});
+		})->add(\$this->app->getContainer()->get('AuthMiddleware'));
+
+		\$this->app->group('/api', function () {
+			\$this->map(['POST', 'GET'], "/${3}", sprintf("%s:listar", Api\Controllers\\${4}Controller::class))->setName('api.${3}');
+			\$this->group('/${3}', function () {
+				\$this->post("/{id}/state", sprintf("%s:state", Api\Controllers\\${4}Controller::class))->setName('${3}.state');
+				\$this->post("/delete", sprintf("%s:delete", Api\Controllers\\${4}Controller::class))->setName('${3}.delete');
+			});
+		})->add(\$this->app->getContainer()->get('AuthMiddleware'));
+	}
+
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>call-route</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
