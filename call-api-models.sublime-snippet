@@ -44,6 +44,7 @@ class ${2} extends AbstractTable {
     ];
 
     public function init() {
+        
         \$this->getHeader('${4}')->getCell()->addDecorator('link', [
             'url' => \$this->View->route->pathFor('${6:route}.edit', [
                 'id' => "%s"

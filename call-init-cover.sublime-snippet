@@ -2,6 +2,7 @@
 	<content><![CDATA[
 \$this->getHeader('${1:cover}')->getCell()->addDecorator('img', [
             'base' => \$this->getUrl(),
+            //'class' => 'img-crcle',
             'vars' => ['${2:cover}']
         ]);
 ]]></content>
