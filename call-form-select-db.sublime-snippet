@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+  //*********************** ${1:name} **************************//
+   \$this->add([
+            'type' => \SIGA\Core\Form\Fields\Select::class,
+            'name' => '${1}',
+            'options' => [
+                'label' => "${2:Label}:",
+                'empty' => "--Selecione--",
+                //table: Nome da tabela
+                //Colunas no formato de array ex: ['id' => 'name'] (opcional)
+                //Condição AND ou OR status = ? AND ou OR name = ?
+                //Os value conforme os parametros passsados na condição array [1, 'claudio']
+                'value_options'=> \$this->dbValueOptions('${3:table}')
+            ],
+            'attributes' => [
+                'class' => 'form-control'
+            ],
+        ]);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>call-form-select-db</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

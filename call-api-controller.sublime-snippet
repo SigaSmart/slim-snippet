@@ -32,6 +32,8 @@ class ${2}Controller extends ControllerAbstract {
         \$params = \$req->getParams();
         \$this->getModel()->getTableModel();
         if (\$this->TableModel):
+            //se for usar a leitura em blocos descomente essa linha  
+             //\$this->view->setTemplatePathCuston(sprintf("%s/%s/lista", \$this->TemplatePath, \$this->template));
             //Se for usar o filtro por empresa descomentar essa linha
             ${5://}\$this->model->offsetSet('empresa', \$this->session->get('restrito', 'default'));
             \$this->getTable();
@@ -42,6 +44,9 @@ class ${2}Controller extends ControllerAbstract {
                         ->setAdapter(\$this->adapter)
                         ->setView(\$this->view)
                         ->setParamAdapter(\$object);
+                //se for usar a leitura em blocos use essa linha          
+                //return \$this->TableModel->render(\$this->route,'newDataTableJson');
+                //se for usar a leitura em tabela use essa linha  
                 return \$this->TableModel->render(\$this->route);
             endif;
         endif;
